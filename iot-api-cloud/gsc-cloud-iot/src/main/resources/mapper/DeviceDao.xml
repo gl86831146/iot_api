@@ -11,7 +11,6 @@
         <result column="humidity" property="humidity" />
         <result column="deleted" property="deleted" />
         <result column="device_type" property="deviceType" />
-        <result column="scene_params" property="sceneParams" />
         <result column="last_trigger_time" property="lastTriggerTime" />
         <result column="tenant_id" property="tenantId" />
         <result column="bind_user_count" property="bindUserCount" />
@@ -23,7 +22,7 @@
 
     <sql id="Base_Column_List">
         id, device_id, name, type, status, temperature, humidity,
-        deleted, device_type, scene_params, last_trigger_time,
+        deleted, device_type, last_trigger_time,
         tenant_id, bind_user_count, is_activated, bind_status,
         create_time, update_time
     </sql>

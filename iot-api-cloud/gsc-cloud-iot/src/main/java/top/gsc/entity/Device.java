@@ -26,10 +26,10 @@ public class Device extends BaseEntity {
     private String name;
 
     @TableField("type")
-    private Integer type;  // 1-灯 2-遥感传感器 3-数码器 4-红外传感器
+    private String type;
 
     @TableField("status")
-    private Integer status;  // 0-离线 1-在线
+    private Integer status;
 
     @TableField("temperature")
     private Float temperature;
@@ -38,13 +38,11 @@ public class Device extends BaseEntity {
     private Float humidity;
 
     @TableField("deleted")
-    private Integer deleted;  // 0-正常 1-已删除
+    private Integer deleted;
 
     @TableField("device_type")
-    private String deviceType;  // temp_control/security
+    private Integer deviceType;
 
-    @TableField("scene_params")
-    private String sceneParams;  // JSON格式数据
 
     @TableField("last_trigger_time")
     private LocalDateTime lastTriggerTime;
@@ -56,10 +54,10 @@ public class Device extends BaseEntity {
     private Integer bindUserCount;
 
     @TableField("is_activated")
-    private Integer isActivated;  // 0-未激活 1-激活
+    private Integer isActivated;
 
     @TableField("bind_status")
-    private Integer bindStatus;  // 0-未绑定 1-已绑定
+    private Integer bindStatus;
 
     @TableField("create_time")
     private LocalDateTime createTime;

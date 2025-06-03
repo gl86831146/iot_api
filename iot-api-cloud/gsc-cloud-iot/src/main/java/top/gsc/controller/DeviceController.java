@@ -30,5 +30,4 @@ import java.util.Map;
 @AllArgsConstructor
 public class DeviceController {
 
-
 }
