@@ -26,7 +26,7 @@ public class DeviceVO implements Serializable {
     private String name;
 
     @Schema(description = "设备类型")
-    private Integer type;
+    private String type;
 
     @Schema(description = "设备状态")
     private Integer status;
@@ -38,10 +38,8 @@ public class DeviceVO implements Serializable {
     private Float humidity;
 
     @Schema(description = "设备功能类型")
-    private String deviceType;
+    private Integer deviceType;
 
-    @Schema(description = "场景参数配置（JSON格式）")
-    private String sceneParams;
 
     @Schema(description = "最后触发时间")
     private LocalDateTime lastTriggerTime;

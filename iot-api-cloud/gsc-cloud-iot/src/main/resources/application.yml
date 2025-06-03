@@ -8,7 +8,7 @@ spring:
      username: nacos
      password: nacos
      discovery:
-      server-addr: 111.230.250.174:8848,111.230.250.174:9848
+      server-addr: 111.230.250.174:8848
       namespace: public
      config:
       server-addr: ${spring.cloud.nacos.discovery.server-addr}
