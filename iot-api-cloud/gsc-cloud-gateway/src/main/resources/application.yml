@@ -31,6 +31,14 @@ spring:
             - Path=/iot/**
           filters:
             - StripPrefix=1
+
+        - id: gsc-cloud-admin
+          uri: lb://gsc-cloud-admin
+          predicates:
+              - Path=/admin/**
+          filters:
+              - StripPrefix=1
+          order: 3
     nacos:
       username: nacos
       password: nacos

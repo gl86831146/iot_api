@@ -1,6 +1,7 @@
 package top.gsc.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,70 +16,54 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @TableName("t_device")
 public class Device extends BaseEntity {
+    @TableId
+    private Long id;
 
-    /**
-     * 设备唯一标识(如MAC地址)
-     */
+    @TableField("device_id")
     private String deviceId;
 
-    /**
-     * 设备名称
-     */
+    @TableField("name")
     private String name;
 
-    /**
-     * 设备类型 1-对 2-温度传感器 3-控制器
-     */
-    private Integer type;
+    @TableField("type")
+    private Integer type;  // 1-灯 2-遥感传感器 3-数码器 4-红外传感器
 
-    /**
-     * 状态：0-离线 1-在线
-     */
-    private Integer status;
+    @TableField("status")
+    private Integer status;  // 0-离线 1-在线
 
-    /**
-     * 温度
-     */
+    @TableField("temperature")
     private Float temperature;
 
-    /**
-     * 湿度
-     */
+    @TableField("humidity")
     private Float humidity;
 
-    /**
-     * 设备功能类型: temp_control-温控系统, security-安防系统
-     */
-    private String deviceType;
+    @TableField("deleted")
+    private Integer deleted;  // 0-正常 1-已删除
 
-    /**
-     * 场景参数配置
-     */
-    
-    private String sceneParams;
+    @TableField("device_type")
+    private String deviceType;  // temp_control/security
 
-    /**
-     * 最后触发时间
-     */
+    @TableField("scene_params")
+    private String sceneParams;  // JSON格式数据
+
+    @TableField("last_trigger_time")
     private LocalDateTime lastTriggerTime;
 
-    /**
-     * 归属用户ID
-     */
+    @TableField("tenant_id")
     private Long tenantId;
 
-    /**
-     * 当前已绑定用户数
-     */
+    @TableField("bind_user_count")
     private Integer bindUserCount;
 
-    /**
-     * 是否激活 (0-未激活 1-激活)
-     */
-    private Integer isActivated;
+    @TableField("is_activated")
+    private Integer isActivated;  // 0-未激活 1-激活
 
-    /**
-     * 绑定状态 (0-未绑定 1-已绑定)
-     */
-    private Integer bindStatus;
+    @TableField("bind_status")
+    private Integer bindStatus;  // 0-未绑定 1-已绑定
+
+    @TableField("create_time")
+    private LocalDateTime createTime;
+
+    @TableField("update_time")
+    private LocalDateTime updateTime;
 }
