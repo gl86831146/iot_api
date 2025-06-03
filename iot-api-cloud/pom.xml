@@ -21,6 +21,7 @@
         <module>gsc-cloud-module/gsc-cloud-sms</module>
         <module>gsc-cloud-module/gsc-cloud-storage</module>
         <module>gsc-cloud-iot</module>
+        <module>gsc-cloud-admin</module>
     </modules>
 
     <parent>

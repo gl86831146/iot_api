@@ -29,7 +29,7 @@ public class DeviceVO implements Serializable {
     private Integer type;
 
     @Schema(description = "设备状态")
-    private Boolean status;
+    private Integer status;
 
     @Schema(description = "温度")
     private Float temperature;
@@ -37,7 +37,32 @@ public class DeviceVO implements Serializable {
     @Schema(description = "湿度")
     private Float humidity;
 
+    @Schema(description = "设备功能类型")
+    private String deviceType;
+
+    @Schema(description = "场景参数配置（JSON格式）")
+    private String sceneParams;
+
+    @Schema(description = "最后触发时间")
+    private LocalDateTime lastTriggerTime;
+
+    @Schema(description = "租户ID")
+    private Long tenantId;
+
+    @Schema(description = "当前已绑定用户数")
+    private Integer bindUserCount;
+
+    @Schema(description = "是否激活：0-未激活 1-激活")
+    private Integer isActivated;
+
+    @Schema(description = "绑定状态：0-未绑定 1-已绑定")
+    private Integer bindStatus;
+
+
     @Schema(description = "创建时间")
     @JsonFormat(pattern = DateUtils.DATE_TIME_PATTERN)
     private LocalDateTime createTime;
+
+    @Schema(description = "更新时间")
+    private LocalDateTime updateTime;
 }

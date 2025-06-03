@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import top.gsc.framework.common.cache.RedisCache;
 import top.gsc.framework.common.cache.RedisKeys;
 import top.gsc.framework.security.properties.SecurityProperties;
+import top.gsc.framework.security.user.ManagerDetail;
 import top.gsc.framework.security.user.UserDetail;
 
 import java.util.List;
@@ -26,6 +27,11 @@ public class TokenStoreCache {
         String key = RedisKeys.getAccessTokenKey(accessToken);
         redisCache.set(key, user, securityProperties.getAccessTokenExpire());
     }
+    public void saveManager(String accessToken, ManagerDetail manager) {
+        String key = RedisKeys.getAccessTokenKey(accessToken);
+        redisCache.set(key, manager, securityProperties.getAccessTokenExpire());
+    }
+
 
     public void saveUser(String accessToken, UserDetail user, long expire) {
         String key = RedisKeys.getAccessTokenKey(accessToken);
